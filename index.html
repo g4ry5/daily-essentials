@@ -13,20 +13,16 @@
       padding: 20px;
     }
     .container {
-      max-width: 400px;
+      max-width: 420px;
       margin: auto;
       background: white;
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    h1 {
-      margin-bottom: 5px;
-    }
-    p {
-      color: gray;
-      margin-bottom: 20px;
-    }
+    h1 { margin-bottom: 5px; }
+    p { color: gray; margin-bottom: 20px; }
+
     .link {
       display: block;
       margin: 10px 0;
@@ -36,27 +32,95 @@
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
+      cursor: pointer;
     }
-    .link:hover {
-      background: #45a049;
+    .link:hover { background: #45a049; }
+
+    /* Sub menu */
+    .submenu {
+      display: none;
+      margin-top: 5px;
+    }
+    .sublink {
+      display: block;
+      margin: 6px 0;
+      padding: 10px;
+      background: #e8f5e9;
+      color: #333;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .sublink:hover {
+      background: #d0f0d4;
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    
-    <img src="https://i.imgur.com/TeUjUgp.png" width="80" style="border-radius:50%;">
-    
+
+    <img src="https://i.imgur.com/TeUjUgp.png" width="80" style="border-radius:50%; margin-bottom:10px;">
+
     <h1>Daily Essentials</h1>
-    <p>Kebutuhan Harian Kita Semua</p>
+    <p>Rekomendasi skincare & kebutuhan harian yang worth it ✨</p>
 
-    <a class="link" href="#" target="_blank">💡 Produk Viral</a>
-    <a class="link" href="#" target="_blank">🔥 Skincare Favorit</a>
-    <a class="link" href="#" target="_blank">🏠 Kebutuhan Rumah</a>
-    <a class="link" href="#" target="_blank">📚 Rekomendasi Buku</a>
+    <!-- PRODUK VIRAL (CLICKABLE) -->
+    <div class="link" onclick="toggleMenu('viral')">🔥 Produk Viral</div>
 
+    <div id="viral" class="submenu">
+      <a class="sublink" href="LINK1" target="_blank">Serum viral bikin glowing</a>
+      <a class="sublink" href="LINK2" target="_blank">Sabun muka best seller</a>
+      <a class="sublink" href="LINK3" target="_blank">Alat rumah tangga viral</a>
+    </div>
+    
+    <!-- PRODUK Skincare (CLICKABLE) -->
+    <div class="link" onclick="toggleMenu('skincare')">Skincare</div>
+    
+    <div id="skincare" class="submenu">
+      <a class="sublink" href="LINK1" target="_blank">Facewash</a>
+      <a class="sublink" href="LINK2" target="_blank">Moizturizer</a>
+      <a class="sublink" href="LINK3" target="_blank">Serum</a>
+    </div>
+
+    <!-- PRODUK Kebutuhan Rumah (CLICKABLE) -->
+    <div class="link" onclick="toggleMenu('kebutuhanrumah')">Kebutuhan Rumah</div>
+    
+    <div id="kebutuhanrumah" class="submenu">
+      <a class="sublink" href="LINK1" target="_blank">Meja</a>
+      <a class="sublink" href="LINK2" target="_blank">Kursi</a>
+      <a class="sublink" href="LINK3" target="_blank">Sendok</a>
+      <a class="sublink" href="LINK3" target="_blank">Garpu</a>
+    </div>
+
+     <!-- PRODUK Rekomendasi Buku (CLICKABLE) -->
+    <div class="link" onclick="toggleMenu('book')">Rekomendasi Buku</div>
+    
+    <div id="book" class="submenu">
+      <a class="sublink" href="LINK1" target="_blank">Seni Belajar Bodo Amat</a>
+      <a class="sublink" href="LINK2" target="_blank">Financial</a>
+      <a class="sublink" href="LINK3" target="_blank">Matematika</a>
+      <a class="sublink" href="LINK3" target="_blank">Kimia</a>
+    </div>
+
+    <!-- PRODUK LAIN 
+    <a class="link" href="LINK_KAMU">⭐ Barang yang aku pakai tiap hari</a>
+    <a class="link" href="LINK_KAMU">🏠 Kebutuhan rumah</a>
+    <a class="link" href="LINK_KAMU">📚 Rekomendasi buku</a>
+    -->
+    
   </div>
+
+  <script>
+    function toggleMenu(id) {
+      var menu = document.getElementById(id);
+      if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'block';
+      }
+    }
+  </script>
 
 </body>
 </html>
